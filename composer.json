@@ -1,0 +1,36 @@
+{
+    "name": "elloro/craft-social-feed",
+    "description": "Display social media feeds in Craft templates.",
+    "version": "1.0.0",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elloro",
+            "homepage": "https://www.elloro.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "craftcms/cms": "^3.0|^4.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "kevinrob/guzzle-cache-middleware": "^3.3.1",
+        "symfony/cache": "^5.0|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "elloro\\socialfeed\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Social Feed",
+        "handle": "social-feed",
+        "developer": "Elloro",
+        "developerUrl": "https://www.elloro.nl",
+        "components": {
+            "socialFeedService": "elloro\\socialfeed\\services\\SocialFeedService"
+        },
+        "class": "elloro\\socialfeed\\SocialFeed"
+    }
+}
