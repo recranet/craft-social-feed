@@ -10,6 +10,7 @@
 
 namespace elloro\socialfeed;
 
+use craft\base\Model;
 use elloro\socialfeed\models\Settings;
 use elloro\socialfeed\services\SocialFeedService as SocialFeedServiceService;
 use elloro\socialfeed\variables\SocialFeedVariable;
@@ -56,21 +57,21 @@ class SocialFeed extends Plugin
      *
      * @var string
      */
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
     /**
      * Set to `true` if the plugin should have a settings view in the control panel.
      *
      * @var bool
      */
-    public $hasCpSettings = false;
+    public bool $hasCpSettings = false;
 
     /**
      * Set to `true` if the plugin should have its own section (main nav item) in the control panel.
      *
      * @var bool
      */
-    public $hasCpSection = false;
+    public bool $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
@@ -109,7 +110,7 @@ class SocialFeed extends Plugin
     /**
      * @return Settings
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?Model
     {
         return new Settings();
     }
