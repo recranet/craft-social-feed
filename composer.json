@@ -1,7 +1,7 @@
 {
     "name": "elloro/craft-social-feed",
     "description": "Display social media feeds in Craft templates.",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "type": "craft-plugin",
     "license": "MIT",
     "authors": [
