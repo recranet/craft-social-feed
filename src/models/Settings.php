@@ -30,9 +30,9 @@ class Settings extends Model
     // =========================================================================
 
     /**
-     * @var string
+     * @var string|null
      */
-    public string $apiKey;
+    public ?string $apiKey = null;
 
     // Public Methods
     // =========================================================================
