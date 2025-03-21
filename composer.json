@@ -4,6 +4,8 @@
     "version": "3.1.0",
     "type": "craft-plugin",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Elloro",
@@ -19,10 +21,22 @@
         "psr/simple-cache": "^1.0",
         "symfony/cache": "^5.0|^6.0"
     },
+    "require-dev": {
+        "craftcms/phpstan": "dev-main"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
     "autoload": {
         "psr-4": {
           "elloro\\socialfeed\\": "src/"
         }
+    },
+    "scripts": {
+        "phpstan": "phpstan --memory-limit=1G"
     },
     "extra": {
         "name": "Social Feed",
