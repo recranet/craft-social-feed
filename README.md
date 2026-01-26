@@ -34,9 +34,11 @@ return [
 ];
 ```
 
-| Setting  | Type   | Required | Description                                  |
-|----------|--------|----------|----------------------------------------------|
-| `apiKey` | string | Yes      | API key for the social feed service           |
+Add the following to your `.env` file:
+
+```
+SOCIAL_FEED_API_KEY=
+```
 
 The plugin connects to the API at https://social.elloro.nl. You can verify your API key by making a test request:
 
