@@ -31,6 +31,7 @@ The plugin requires an API key for the social feed service. Create a `config/soc
 
 return [
     'apiKey' => getenv('SOCIAL_FEED_API_KEY'),
+    'feedId' => getenv('SOCIAL_FEED_ID'),
 ];
 ```
 
@@ -38,14 +39,15 @@ Add the following to your `.env` file:
 
 ```
 SOCIAL_FEED_API_KEY=
+SOCIAL_FEED_ID=
 ```
 
 The plugin connects to the API at https://social.elloro.nl. You can verify your API key by making a test request:
 
 ```bash
 export SOCIAL_FEED_API_KEY=your-api-key
-export SOCIAL_PAGE_ID=your-page-id
-curl -H "X-AUTH-TOKEN: $SOCIAL_FEED_API_KEY" https://social.elloro.nl/api/social_pages/$SOCIAL_PAGE_ID/posts
+export SOCIAL_FEED_ID=your-feed-id
+curl -H "X-AUTH-TOKEN: $SOCIAL_FEED_API_KEY" https://social.elloro.nl/api/social_pages/$SOCIAL_FEED_ID/posts
 ```
 
 ## Usage
