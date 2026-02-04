@@ -55,7 +55,16 @@ curl -H "X-AUTH-TOKEN: $SOCIAL_FEED_API_KEY" https://social.elloro.nl/api/social
 The plugin exposes a `craft.socialFeed` template variable with a `getPosts` method.
 
 ```twig
-{% set posts = craft.socialFeed.getPosts(pageId, params) %}
+{% set pageId = getenv('SOCIAL_FEED_PAGE_ID') %}
+{% if items is not defined %}
+    {% set items = craft.socialFeed.getPosts(pageId, {'limit': 8}) %}
+{% endif %}
+
+{% for post in items %}
+    <article>
+        {{ post.content }}
+    </article>
+{% endfor %}
 ```
 
 ### Parameters
@@ -72,22 +81,6 @@ The plugin exposes a `craft.socialFeed` template variable with a `getPosts` meth
 | `order`   | string  | Sort order: `"ASC"` or `"DESC"`                  |
 | `limit`   | integer | Maximum number of posts to return                |
 | `offset`  | integer | Number of posts to skip (for pagination)         |
-
-### Example
-
-```twig
-{% set posts = craft.socialFeed.getPosts('my-page-id', {
-    order: 'DESC',
-    limit: 10,
-    offset: 0,
-}) %}
-
-{% for post in posts %}
-    <article>
-        {{ post.content }}
-    </article>
-{% endfor %}
-```
 
 ## Caching
 
